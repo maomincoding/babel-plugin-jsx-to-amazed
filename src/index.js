@@ -1,16 +1,16 @@
-import jsx from "@babel/plugin-syntax-jsx";
+import jsx from '@babel/plugin-syntax-jsx';
 
 /**
  * @param {Babel} babel
  * @param {object} [options]
  * @param {string} [options.tag='html']  The tagged template "tag" function name to produce.
  */
-export default function jsxToStrveBabelPlugin({ types: t }, options = {}) {
-  const tagString = options.tag || "html";
+export default function jsxToAmazedBabelPlugin({ types: t }, options = {}) {
+  const tagString = options.tag || 'html';
   const tag = dottedIdentifier(tagString);
 
   function dottedIdentifier(keypath) {
-    const path = keypath.split(".");
+    const path = keypath.split('.');
     let out;
     for (let i = 0; i < path.length; i++) {
       const ident = t.identifier(path[i]);
@@ -24,7 +24,7 @@ export default function jsxToStrveBabelPlugin({ types: t }, options = {}) {
 
   function expr(value) {
     expressions.push(value);
-    quasis.push(t.templateElement({ raw: "", cooked: "" }));
+    quasis.push(t.templateElement({ raw: '', cooked: '' }));
   }
 
   function raw(str) {
@@ -34,7 +34,7 @@ export default function jsxToStrveBabelPlugin({ types: t }, options = {}) {
   }
 
   function escapeText(text) {
-    if (text.indexOf("<") < 0) {
+    if (text.indexOf('<') < 0) {
       return raw(text);
     }
     return expr(t.stringLiteral(text));
@@ -54,7 +54,7 @@ export default function jsxToStrveBabelPlugin({ types: t }, options = {}) {
     return expr(t.stringLiteral(node.value));
   }
 
-  const FRAGMENT_EXPR = dottedIdentifier("React.Fragment");
+  const FRAGMENT_EXPR = dottedIdentifier('React.Fragment');
 
   function isFragmentName(node) {
     return t.isNodesEquivalent(FRAGMENT_EXPR, node);
@@ -67,22 +67,19 @@ export default function jsxToStrveBabelPlugin({ types: t }, options = {}) {
 
   function getNameExpr(node) {
     if (t.isJSXNamespacedName(node)) {
-      return t.identifier(node.namespace.name + ":" + node.name.name);
+      return t.identifier(node.namespace.name + ':' + node.name.name);
     }
     if (!t.isJSXMemberExpression(node)) {
       return t.identifier(node.name);
     }
-    return t.memberExpression(
-      getNameExpr(node.object),
-      t.identifier(node.property.name)
-    );
+    return t.memberExpression(getNameExpr(node.object), t.identifier(node.property.name));
   }
 
   function processChildren(node, name, isFragment) {
     const children = t.react.buildChildren(node);
     if (children && children.length !== 0) {
       if (!isFragment) {
-        raw(">");
+        raw('>');
       }
       for (let i = 0; i < children.length; i++) {
         let child = children[i];
@@ -97,17 +94,17 @@ export default function jsxToStrveBabelPlugin({ types: t }, options = {}) {
 
       if (!isFragment) {
         if (isComponentName(name)) {
-          raw("</");
+          raw('</');
           expr(name);
-          raw(">");
+          raw('>');
         } else {
-          raw("</");
+          raw('</');
           raw(name.name);
-          raw(">");
+          raw('>');
         }
       }
     } else if (!isFragment) {
-      raw("/>");
+      raw('/>');
     }
   }
 
@@ -118,30 +115,30 @@ export default function jsxToStrveBabelPlugin({ types: t }, options = {}) {
 
     if (!isFragment) {
       if (isComponentName(name)) {
-        raw("<");
+        raw('<');
         expr(name);
       } else {
-        raw("<");
+        raw('<');
         raw(name.name);
       }
 
       if (open.attributes) {
         for (let i = 0; i < open.attributes.length; i++) {
           const attr = open.attributes[i];
-          raw(" ");
+          raw(' ');
           if (t.isJSXSpreadAttribute(attr)) {
-            raw("...");
+            raw('...');
             expr(attr.argument);
             continue;
           }
           const { name, value } = attr;
           if (t.isJSXNamespacedName(name)) {
-            raw(name.namespace.name + ":" + name.name.name);
+            raw(name.namespace.name + ':' + name.name.name);
           } else {
             raw(name.name);
           }
           if (value) {
-            raw("=");
+            raw('=');
             if (value.expression) {
               expr(value.expression);
             } else if (t.isStringLiteral(value)) {
@@ -167,7 +164,7 @@ export default function jsxToStrveBabelPlugin({ types: t }, options = {}) {
     let quasisBefore = quasis;
     let expressionsBefore = expressions;
 
-    quasis = [t.templateElement({ raw: "", cooked: "" })];
+    quasis = [t.templateElement({ raw: '', cooked: '' })];
     expressions = [];
 
     if (isFragment) {
@@ -182,11 +179,11 @@ export default function jsxToStrveBabelPlugin({ types: t }, options = {}) {
     quasis = quasisBefore;
     expressions = expressionsBefore;
 
-    state.set("jsxElement", true);
+    state.set('jsxElement', true);
   }
 
   return {
-    name: "jsx-to-strve",
+    name: 'jsx-to-amazed',
     inherits: jsx,
     visitor: {
       JSXElement(path, state) {

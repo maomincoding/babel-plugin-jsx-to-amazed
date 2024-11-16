@@ -1,9 +1,9 @@
 {
   "name": "babel-plugin-jsx-to-amazed",
-  "description": "This plugin converts JSX into Tagged Templates that work with strve.",
-  "version": "0.0.1",
-  "main": "dist/babel-plugin-jsx-to-strve.js",
-  "module": "dist/babel-plugin-jsx-to-strve.mjs",
+  "description": "This plugin converts JSX into Tagged Templates that work with amazed.js.",
+  "version": "0.0.3",
+  "main": "dist/babel-plugin-jsx-to-amazed.js",
+  "module": "dist/babel-plugin-jsx-to-amazed.mjs",
   "scripts": {
     "build": "microbundle src/index.js -f es,cjs --target node --no-compress --no-sourcemap"
   },
@@ -12,18 +12,18 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/strveJs/babel-plugin-jsx-to-strve"
+    "url": "https://github.com/maomincoding/babel-plugin-jsx-to-amazed"
   },
   "bugs": {
-    "url": "https://github.com/strveJs/babel-plugin-jsx-to-strve/issues"
+    "url": "https://github.com/maomincoding/babel-plugin-jsx-to-amazed/issues"
   },
-  "homepage": "https://github.com/strveJs/babel-plugin-jsx-to-strve#readme",
+  "homepage": "https://github.com/maomincoding/babel-plugin-jsx-to-amazed#readme",
   "keywords": [
     "Hyperscript Tagged Markup",
     "JSX",
     "jsx",
-    "strve",
-    "strve-js",
+    "amazed",
+    "amazed-js",
     "tagged template",
     "template literals",
     "virtual dom",
