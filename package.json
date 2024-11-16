@@ -1,7 +1,7 @@
 {
-  "name": "babel-plugin-jsx-to-strve",
+  "name": "babel-plugin-jsx-to-amazed",
   "description": "This plugin converts JSX into Tagged Templates that work with strve.",
-  "version": "2.1.0",
+  "version": "0.0.1",
   "main": "dist/babel-plugin-jsx-to-strve.js",
   "module": "dist/babel-plugin-jsx-to-strve.mjs",
   "scripts": {
