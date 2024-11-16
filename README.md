@@ -1,4 +1,4 @@
-# babel-plugin-jsx-to-amazed
+# Babel-plugin-jsx-to-amazed
 
 This plugin converts JSX into Tagged Templates that work with amazed.js.
 

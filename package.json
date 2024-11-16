@@ -1,7 +1,7 @@
 {
   "name": "babel-plugin-jsx-to-amazed",
   "description": "This plugin converts JSX into Tagged Templates that work with amazed.js.",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "main": "dist/babel-plugin-jsx-to-amazed.js",
   "module": "dist/babel-plugin-jsx-to-amazed.mjs",
   "scripts": {
