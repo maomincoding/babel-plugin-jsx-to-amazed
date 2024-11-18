@@ -1,6 +1,6 @@
-# Babel-plugin-jsx-to-amazed
+# Babel-plugin-jsx-to-mettle
 
-This plugin converts JSX into Tagged Templates that work with amazed.js.
+This plugin converts JSX into Tagged Templates that work with mettle.js.
 
 ## Usage
 
@@ -9,7 +9,7 @@ In your Babel configuration (`.babelrc`, `babel.config.js`, `"babel"` field in p
 ```js
 {
   "plugins": [
-    ["babel-plugin-jsx-to-amazed"]
+    ["babel-plugin-jsx-to-mettle"]
   ]
 }
 ```
@@ -18,11 +18,11 @@ In your Babel configuration (`.babelrc`, `babel.config.js`, `"babel"` field in p
 
 #### `tag=html`
 
-By default, `babel-plugin-jsx-to-amazed` will process all Tagged Templates with a tag function named `html`. To use a different name, use the `tag` option in your Babel configuration:
+By default, `babel-plugin-jsx-to-mettle` will process all Tagged Templates with a tag function named `html`. To use a different name, use the `tag` option in your Babel configuration:
 
 ```js
 {"plugins":[
-  ["babel-plugin-jsx-to-amazed", {
+  ["babel-plugin-jsx-to-mettle", {
     "tag": "html"
   }]
 ]}

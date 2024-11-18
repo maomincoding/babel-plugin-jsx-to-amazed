@@ -1,11 +1,15 @@
-import jsx from '@babel/plugin-syntax-jsx';
+var jsx = require('@babel/plugin-syntax-jsx');
+
+function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
+
+var jsx__default = /*#__PURE__*/_interopDefaultLegacy(jsx);
 
 /**
  * @param {Babel} babel
  * @param {object} [options]
  * @param {string} [options.tag='html']  The tagged template "tag" function name to produce.
  */
-function jsxToAmazedBabelPlugin({
+function jsxToMettleBabelPlugin({
   types: t
 }, options = {}) {
   const tagString = options.tag || 'html';
@@ -169,8 +173,8 @@ function jsxToAmazedBabelPlugin({
     state.set('jsxElement', true);
   }
   return {
-    name: 'jsx-to-amazed',
-    inherits: jsx,
+    name: 'jsx-to-mettle',
+    inherits: jsx__default["default"],
     visitor: {
       JSXElement(path, state) {
         jsxVisitorHandler(path, state, false);
@@ -182,4 +186,4 @@ function jsxToAmazedBabelPlugin({
   };
 }
 
-export { jsxToAmazedBabelPlugin as default };
+module.exports = jsxToMettleBabelPlugin;

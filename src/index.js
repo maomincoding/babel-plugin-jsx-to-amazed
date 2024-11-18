@@ -5,7 +5,7 @@ import jsx from '@babel/plugin-syntax-jsx';
  * @param {object} [options]
  * @param {string} [options.tag='html']  The tagged template "tag" function name to produce.
  */
-export default function jsxToAmazedBabelPlugin({ types: t }, options = {}) {
+export default function jsxToMettleBabelPlugin({ types: t }, options = {}) {
   const tagString = options.tag || 'html';
   const tag = dottedIdentifier(tagString);
 
@@ -183,7 +183,7 @@ export default function jsxToAmazedBabelPlugin({ types: t }, options = {}) {
   }
 
   return {
-    name: 'jsx-to-amazed',
+    name: 'jsx-to-mettle',
     inherits: jsx,
     visitor: {
       JSXElement(path, state) {

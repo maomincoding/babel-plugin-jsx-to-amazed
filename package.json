@@ -1,9 +1,9 @@
 {
   "name": "babel-plugin-jsx-to-mettle",
-  "description": "This plugin converts JSX into Tagged Templates that work with amazed.js.",
-  "version": "0.1.0",
-  "main": "dist/babel-plugin-jsx-to-amazed.js",
-  "module": "dist/babel-plugin-jsx-to-amazed.mjs",
+  "description": "This plugin converts JSX into Tagged Templates that work with mettle.js.",
+  "version": "0.1.1",
+  "main": "dist/babel-plugin-jsx-to-mettle.js",
+  "module": "dist/babel-plugin-jsx-to-mettle.mjs",
   "scripts": {
     "build": "microbundle src/index.js -f es,cjs --target node --no-compress --no-sourcemap"
   },
@@ -12,25 +12,26 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/maomincoding/babel-plugin-jsx-to-amazed"
+    "url": "https://github.com/maomincoding/babel-plugin-jsx-to-mettle"
   },
   "bugs": {
-    "url": "https://github.com/maomincoding/babel-plugin-jsx-to-amazed/issues"
+    "url": "https://github.com/maomincoding/babel-plugin-jsx-to-mettle/issues"
   },
-  "homepage": "https://github.com/maomincoding/babel-plugin-jsx-to-amazed#readme",
+  "homepage": "https://github.com/maomincoding/babel-plugin-jsx-to-mettle#readme",
   "keywords": [
     "Hyperscript Tagged Markup",
     "JSX",
     "jsx",
-    "amazed",
-    "amazed-js",
+    "mettle",
+    "mettle-js",
     "tagged template",
     "template literals",
     "virtual dom",
     "hyperscript",
     "babel",
     "babel plugin",
-    "babel-plugin"
+    "babel-plugin",
+    "babel-plugin-jsx-to-mettle"
   ],
   "author": "maomincoding",
   "license": "MIT",
