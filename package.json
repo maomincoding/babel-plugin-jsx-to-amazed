@@ -1,7 +1,7 @@
 {
   "name": "babel-plugin-jsx-to-mettle",
   "description": "This plugin converts JSX into Tagged Templates that work with mettle.js.",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "main": "dist/babel-plugin-jsx-to-mettle.js",
   "module": "dist/babel-plugin-jsx-to-mettle.mjs",
   "scripts": {
